@@ -55,7 +55,7 @@
 
     <table frame=void rules=none>
       <tr>
-        <center><img src='image/model.png'></center>
+        <center><img src='./image/model.png'></center>
       </tr>
       <tr>
       </tr>
@@ -63,89 +63,77 @@
     <br><br>
 
 
-    <h2>2. Demos -- Voice Conversion<a name="Comparison"></a></h2>
-    <ul>
-      <li>Bottomline: Replace all convolution layers in the backbone model [1] with the causal version to create a naïve streaming implementation.</li>
-      <li>IBF-VC: Reinplement [2] using the backbone model.</li>
-      <li>Topline: Use the unmodified Backbone model which leverage full-context, but input BNF is extracted from a streaming ASR encoder.</li>
-      <li>DualVC-nonstreaming: Non-streaming mode of our proposed DualVC.</li>
-      <li>DualVC-streaming: Streaming mode of our proposed DualVC.</li>
-    </ul>
+    <h2>2. AudioSamples<a name="Comparison"></a></h2>
+    <h3>
+      2.1 TA Clips
+    </h3>
+    <table><thead>
+      <tr>
+      <th style="text-align: center">Mixture</th>
+      <th style="text-align: center">Clean</th>
+      <th style="text-align: center">AV-Sepformer<sup>[1]</sup></th>
+      <th style="text-align: center">USEV<sup>[2]</sup></th>
+      <th style="text-align: center">ASD+AV-Sepformer</th>
+      <th style="text-align: center">ActiveExtract</th>
+      </tr></thead>
+      <tbody>
+      <tr>
+        <td style="text-align: center"><img src="./image/TA/s_5_mix.png" width="100%"/></td>
+        <td style="text-align: center"><img src="./image/TA/s_5_tgt.png" width="100%"/></td>
+        <td style="text-align: center"><img src="./image/TA/s_5_AVSep_-5.28.png" width="100%"/></td>
+        <td style="text-align: center"><img src="./image/TA/s_5_USEV_17.50.png" width="100%"/></td>
+        <td style="text-align: center"><img src="./image/TA/s_5_ASD+SE_-59.40.png" width="100%"/></td>
+        <td style="text-align: center"><img src="./image/TA/s_5_ActiveExtract_13.19.png" width="100%"/></td>
+        </tr>
+      <tr>
+        <td style="text-align: center"><audio controls="controls" ><source src="./audio/TA/s_28_mix.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+        <td style="text-align: center"><audio controls="controls" ><source src="./audio/TA/s_28_tgt.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+        <td style="text-align: center"><audio controls="controls" ><source src="./audio/TA/s_28_AVSep_-70.00.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+        <td style="text-align: center"><audio controls="controls" ><source src="./audio/TA/s_28_USEV_6.81.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+        <td style="text-align: center"><audio controls="controls" ><source src="./audio/TA/s_28_ASD+SE_-69.59.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+        <td style="text-align: center"><audio controls="controls" ><source src="./audio/TA/s_28_ActiveExtract_-70.00.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+      </tr>
 
-    <table>
-      <tbody id="tbody">
-      </tbody>
-    </table> 
+      <tr>
+        <td style="text-align: center"><img src="./image/TA/s_28_mix.png" width="100%"/></td>
+        <td style="text-align: center"><img src="./image/TA/s_28_tgt.png" width="100%"/></td>
+        <td style="text-align: center"><img src="./image/TA/s_28_AVSep_-70.00.png" width="100%"/></td>
+        <td style="text-align: center"><img src="./image/TA/s_28_USEV_6.81.png" width="100%"/></td>
+        <td style="text-align: center"><img src="./image/TA/s_28_ASD+SE_-69.59.png" width="100%"/></td>
+        <td style="text-align: center"><img src="./image/TA/s_28_ActiveExtract_-70.00.png" width="100%"/></td>
+        </tr>
+      <tr>
+        <td style="text-align: center"><audio controls="controls" ><source src="./audio/TA/s_28_mix.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+        <td style="text-align: center"><audio controls="controls" ><source src="./audio/TA/s_28_tgt.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+        <td style="text-align: center"><audio controls="controls" ><source src="./audio/TA/s_28_AVSep_-70.00.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+        <td style="text-align: center"><audio controls="controls" ><source src="./audio/TA/s_28_USEV_6.81.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+        <td style="text-align: center"><audio controls="controls" ><source src="./audio/TA/s_28_ASD+SE_-69.59.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+        <td style="text-align: center"><audio controls="controls" ><source src="./audio/TA/s_28_ActiveExtract_-70.00.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+        </tr>
+
+        <tr>
+          <td style="text-align: center"><img src="./image/TA/s_28_mix.png" width="100%"/></td>
+          <td style="text-align: center"><img src="./image/TA/s_28_tgt.png" width="100%"/></td>
+          <td style="text-align: center"><img src="./image/TA/s_28_AVSep_-70.00.png" width="100%"/></td>
+          <td style="text-align: center"><img src="./image/TA/s_28_USEV_6.81.png" width="100%"/></td>
+          <td style="text-align: center"><img src="./image/TA/s_28_ASD+SE_-69.59.png" width="100%"/></td>
+          <td style="text-align: center"><img src="./image/TA/s_28_ActiveExtract_-70.00.png" width="100%"/></td>
+          </tr>
+        <tr>
+          <td style="text-align: center"><audio controls="controls" ><source src="./audio/TA/s_28_mix.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+          <td style="text-align: center"><audio controls="controls" ><source src="./audio/TA/s_28_tgt.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+          <td style="text-align: center"><audio controls="controls" ><source src="./audio/TA/s_28_AVSep_-70.00.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+          <td style="text-align: center"><audio controls="controls" ><source src="./audio/TA/s_28_USEV_6.81.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+          <td style="text-align: center"><audio controls="controls" ><source src="./audio/TA/s_28_ASD+SE_-69.59.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+          <td style="text-align: center"><audio controls="controls" ><source src="./audio/TA/s_28_ActiveExtract_-70.00.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+          </tr>
+      </tbody></table>
+    
     </br>
-    <cite>[1] X. Tian, Z. Wang, S. Yang, X. Zhou, H. Du, Y. Zhou, M. Zhang, K. Zhou, B. Sisman, L. Xie et al., “The nus & nwpu system for voice conversion challenge 2020,” in Proc. Joint Workshop for the Blizzard Challenge and Voice Conversion Challenge 2020, 2020, pp. 170–17</cite>
+    <cite>[1] Lin, Jiuxin, et al. "AV-Sepformer: Cross-Attention Sepformer for Audio-Visual Target Speaker Extraction." ICASSP 2023-2023 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP). IEEE, 2023.</cite>
     </br>
-    <cite>[2] Y. Chen, M. Tu, T. Li, X. Li, Q. Kong, J. Li, Z. Wang, Q. Tian, Y. Wang, and Y. Wang, “Streaming voice conversion via intermediate bottleneck features and non-streaming teacher guidance,” CoRR, vol. abs/2210.15158, 202</cite>
+    <cite>[2] Pan, Zexu, Meng Ge, and Haizhou Li. "USEV: Universal speaker extraction with visual cue." IEEE/ACM Transactions on Audio, Speech, and Language Processing 30 (2022): 3032-3045.</cite>
   </section>
 </body>
 
 </html>
-
-<script type="" text/javascript>
-  window.onload = function () {
-    let scenes = ["Clean", "Noisy"]
-    let speakers = ["db_1", "M2VoC_male", "SSB1956", "SSB0273"]
-    //let speakers = ["db_1", "M2VoC_male"]
-    //let genders = ["female", "male"]
-    let genders = ["female", "male", "aishell female", "aishell male"]
-    let models = ["Bottomline", "Baseline", "Topline", "DualVC-nonstreaming", "DualVC-streaming"]
-    let all_samples = [["1.wav", "4.wav", "biaobei_8315010.wav", "TenXiaozhi_007_000472.wav"], 
-                    ["Y0000019527_oMwYDEEBw0g_S00489.wav", "Y0000019576_oVD68qz-Rrw_S00095.wav", "Y0000019686_omXo90yMpGc_S00895.wav", "Y0000019687_omf0WUsolCc_S00328.wav"]]
-    let sample_data = `
-        <tr>
-          <td style="text-align: center; width: 150px;" rowspan=2><strong>Scenario<strong></td>
-          <td style="text-align: center; width: 150px;" rowspan=2><strong>Target Speaker<strong></td>
-          <td style="text-align: center; width: 150px;" rowspan=2><strong>Source speech<strong></td>
-          <td style="text-align: center; width: 150px;" colspan=5><strong>Method<strong></td>
-        </tr>
-        <tr>
-        `
-    for (const id in models) {
-      model = models[id]
-      if (model == 'Baseline') {
-        model = 'IBF-VC'
-      }
-      sample_data += '<td style="text-align: center; width: 150px;" rowspan=1><strong>' + model + '<strong></td>'
-    }
-    sample_data += "</tr>"
-    console.log(sample_data)
-    
-    for (let x in scenes) {
-      let scene = scenes[x]
-      let scene_data = ""
-      scene_data += '<tr>'
-      scene_data += '<td style="text-align: center; width: 150px;" rowspan=' + 16 + '><strong>' + scene + ' Source' + '<strong></td>'
-      let samples = all_samples[x]
-      console.log(scene, samples)
-      for (let y in speakers) {
-        speaker = speakers[y]
-        gender = genders[y]
-        scene_data += '<td style="text-align: center; width: 150px;" rowspan=4>' + gender + '<audio style="width: 150px;"controls="" src="raw/samples/speakers/' + speaker + '.wav"></td>'
-        for (let z in samples) {
-          if (z != 0) {
-            scene_data += '<tr>'
-          }
-          let sample = samples[z]
-          scene_data += '<td style="text-align: center"><audio style="width: 150px;" controls="" src="raw/samples/' + scene + '/source/' + sample + '"></audio></td>'
-          for (let w in models) {
-            let model = models[w]
-            console.log(speaker + model)
-            if ((speaker == "SSB1956" || speaker == "SSB0273") && (model != "DualVC-streaming" && model != "DualVC-nonstreaming")) {
-              console.log("!!!")
-              scene_data += '<td style="text-align: center"><p>N/A</p></td>'
-            } else {
-              scene_data += '<td style="text-align: center"><audio style="width: 150px;" controls="" src="raw/samples/' + scene + '/' + model + '/' + speaker + '/' + sample + '"></audio></td>'
-            }
-          }
-          scene_data += '</tr>'
-        }
-      }
-      sample_data += scene_data
-    }
-    document.getElementById('tbody').innerHTML = sample_data
-  }
-</script>
